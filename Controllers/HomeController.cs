@@ -41,10 +41,28 @@ namespace ControllersExampleProject.Controllers
             //return "{ \"key\": \"value\" }";
         }
 
-        [Route("contact-us/{mobile:regex(^\\d{{10}}$)}")]
-        public string Contact()
+        [Route("file-download")]
+        public VirtualFileResult FileDownload()
         {
-            return "Hello from Contact";
+            // return new VirtualFileResult("/samplePDF.pdf", "application/pdf");
+            return File("/samplePDF.pdf", "application/pdf");
+        }
+
+        [Route("file-download2")]
+        public PhysicalFileResult FileDownload2()
+        {
+            // return new PhysicalFileResult("/Users/gencaypolat/Desktop/samplePDF.pdf", "application/pdf");
+            return PhysicalFile("/Users/gencaypolat/Desktop/samplePDF.pdf", "application/pdf");
+        }
+
+        [Route("file-download3")]
+        public FileContentResult FileDownload3()
+        {
+
+            byte[] bytes = System.IO.File.ReadAllBytes("/Users/gencaypolat/Desktop/samplePDF.pdf");
+
+            // return new FileContentResult(bytes, "application/pdf");
+            return File(bytes, "application/pdf");
         }
     }
 }

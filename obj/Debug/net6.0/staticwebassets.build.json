@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "VEHeDxBouNyMukbVQ7SudwrOYvdfua5nlF1Bs7ZAjE8=",
+  "Hash": "UdCO0lj65TFUSUmGM5eP+fTRXKr7E+LTUlnMBVW1pSg=",
   "Source": "ControllersExampleProject",
   "BasePath": "_content/ControllersExampleProject",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "ControllersExampleProject/wwwroot",
+      "Source": "ControllersExampleProject",
+      "ContentRoot": "/Users/gencaypolat/Documents/dotnet/ControllersExampleProject/wwwroot/",
+      "BasePath": "_content/ControllersExampleProject",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/gencaypolat/Documents/dotnet/ControllersExampleProject/wwwroot/samplePDF.pdf",
+      "SourceId": "ControllersExampleProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/gencaypolat/Documents/dotnet/ControllersExampleProject/wwwroot/",
+      "BasePath": "_content/ControllersExampleProject",
+      "RelativePath": "samplePDF.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/samplePDF.pdf"
+    }
+  ]
 }

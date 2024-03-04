@@ -218,3 +218,5 @@
 /Users/gencaypolat/Documents/dotnet/ControllersExampleProject/obj/Debug/net6.0/ControllersExampleProject.pdb
 /Users/gencaypolat/Documents/dotnet/ControllersExampleProject/obj/Debug/net6.0/ControllersExampleProject.genruntimeconfig.cache
 /Users/gencaypolat/Documents/dotnet/ControllersExampleProject/obj/Debug/net6.0/ref/ControllersExampleProject.dll
+/Users/gencaypolat/Documents/dotnet/ControllersExampleProject/bin/Debug/net6.0/ControllersExampleProject.staticwebassets.runtime.json
+/Users/gencaypolat/Documents/dotnet/ControllersExampleProject/obj/Debug/net6.0/ControllersExampleProject.sourcelink.json

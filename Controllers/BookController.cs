@@ -60,7 +60,9 @@ namespace ControllersExampleProject.Controllers
                 return StatusCode(401);
             }
 
-            return File("/samplePdf.pdf", "application/pdf");
+            // return new RedirectToActionResult("Books", "Store", new {});  //302 - Found
+
+            return new RedirectToActionResult("Books", "Store", new { }, true); //301 - Moved Permanently
         }
     }
 }

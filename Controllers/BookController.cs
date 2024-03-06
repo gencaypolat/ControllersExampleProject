@@ -10,64 +10,40 @@ namespace ControllersExampleProject.Controllers
 {
     public class BookController : Controller
     {
-        [Route("bookstore")]
+        [Route("bookstore/{bookid?}/{isloggedin?}")]
         // Url: /bookstore?bookid=10&isloggedin=true
-        public IActionResult Index()
+        public IActionResult Index(int? bookid, bool? isloggedin)
         {
             //Book id should be applied
-            if (!Request.Query.ContainsKey("bookid"))
+            if (bookid.HasValue == false)
             {
-                //Response.StatusCode = 400;
-                //return Content("Book id is not supplied");
-
-                //return new BadRequestResult();
                 return BadRequest("Book id is not supplied");
             }
 
             //Book id can't be empty
             if (string.IsNullOrEmpty(Convert.ToString(Request.Query["bookid"])))
             {
-                //Response.StatusCode = 400;
-                //return Content("Book id  can't be null or empty");
-
                 return BadRequest("Book id  can't be null or empty");
             }
 
             //Book id should be between 1 to 1000
-            int bookId = Convert.ToInt16(ControllerContext.HttpContext.Request.Query["bookid"]);
-            if (bookId <= 0)
+            if (bookid <= 0)
             {
-                //Response.StatusCode = 400;
-                //return Content("Book id can't be less than or equal to zero");
-
                 return BadRequest("Book id can't be less than or equal to zero");
             }
-            if (bookId > 1000)
-            {
-                // Response.StatusCode = 400;
-                // return Content("Book id can't be greater than 1000");
 
+            if (bookid > 1000)
+            {
                 return NotFound("Book id can't be greater than 1000");
             }
 
             //isloggedin should be true
-            if (Convert.ToBoolean(Request.Query["isloggedin"]) == false)
+            if (isloggedin == false)
             {
-                // Response.StatusCode = 401;
-                // return Content("User must be authenticated");
-
-                //return Unauthorized("User must be authenticated");
-
                 return StatusCode(401);
             }
 
-            // return new RedirectToActionResult("Books", "Store", new { id = bookId });  //302 - Found
-            // return new RedirectToActionResult("Books", "Store", new { id = bookId });  // 302 shortcut version
-
-            // return new RedirectToActionResult("Books", "Store", new { }, permanent: true); //301 - Moved Permanently
-
-            return RedirectToActionPermanent("Books", "Store", new { id = bookId });  // 301 shortcut version
-
+            return Content($"Book id: {bookid}", "text/plain");
         }
     }
 }

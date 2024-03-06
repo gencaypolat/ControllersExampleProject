@@ -11,6 +11,7 @@ namespace ControllersExampleProject.Controllers
     public class BookController : Controller
     {
         [Route("bookstore")]
+        // Url: /bookstore?bookid=10&isloggedin=true
         public IActionResult Index()
         {
             //Book id should be applied
@@ -60,9 +61,13 @@ namespace ControllersExampleProject.Controllers
                 return StatusCode(401);
             }
 
-            // return new RedirectToActionResult("Books", "Store", new {});  //302 - Found
+            // return new RedirectToActionResult("Books", "Store", new { id = bookId });  //302 - Found
+            // return new RedirectToActionResult("Books", "Store", new { id = bookId });  // 302 shortcut version
 
-            return new RedirectToActionResult("Books", "Store", new { }, true); //301 - Moved Permanently
+            // return new RedirectToActionResult("Books", "Store", new { }, permanent: true); //301 - Moved Permanently
+
+            return RedirectToActionPermanent("Books", "Store", new { id = bookId });  // 301 shortcut version
+
         }
     }
 }
